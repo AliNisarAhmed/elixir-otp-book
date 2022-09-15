@@ -48,6 +48,7 @@ defmodule Mastery.Core.Quiz do
     %{quiz | templates: templates}
   end
 
+  # select the next question to be asked to the user
   def select_question(%__MODULE__{templates: t}) when map_size(t) == 0, do: nil
 
   def select_question(quiz) do
