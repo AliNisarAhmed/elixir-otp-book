@@ -10,7 +10,7 @@ defmodule Mastery.Application do
     children = [
       # Starts a worker by calling: Mastery.Worker.start_link(arg)
       {Mastery.Boundary.QuizManager, [name: Mastery.Boundary.QuizManager]},
-      {Registry, [name: Mastry.Registry.QuizSession, keys: :unique]},
+      {Registry, [name: Mastery.Registry.QuizSession, keys: :unique]},
       {DynamicSupervisor, [name: Mastery.Supervisor.QuizSession, strategy: :one_for_one]}
     ]
 
